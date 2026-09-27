@@ -1,0 +1,150 @@
+// Mock / fictional patient data for the MediKiosk demo.
+// None of this represents real patients.
+
+export const currentPatient = {
+  id: "MK-P-1042",
+  name: "Rajesh Kumar",
+  age: 54,
+  gender: "Male",
+  language: "English",
+  department: "General Medicine",
+  token: "A102",
+  appointment: "10:45 AM",
+  historyCompletion: 35,
+  chiefComplaint: "Chest discomfort for 2 days",
+  pastConditions: ["Hypertension", "Type 2 Diabetes"],
+  allergies: ["No Known Drug Allergies"],
+};
+
+export const doctorQueue = [
+  {
+    id: "1042",
+    token: "A102",
+    name: "Rajesh Kumar",
+    age: 54,
+    gender: "Male",
+    complaint: "Chest Pain",
+    status: "priority",
+    department: "General Medicine",
+    submittedAt: "09:12 AM",
+  },
+  {
+    id: "1043",
+    token: "A103",
+    name: "Patient 02",
+    age: 31,
+    gender: "Female",
+    complaint: "Fever",
+    status: "ready",
+    department: "General Medicine",
+    submittedAt: "09:20 AM",
+  },
+  {
+    id: "1044",
+    token: "A104",
+    name: "Patient 03",
+    age: 67,
+    gender: "Male",
+    complaint: "Joint Pain",
+    status: "ready",
+    department: "Orthopedics",
+    submittedAt: "09:31 AM",
+  },
+  {
+    id: "1045",
+    token: "A105",
+    name: "Patient 04",
+    age: 42,
+    gender: "Female",
+    complaint: "Headache",
+    status: "waiting",
+    department: "General Medicine",
+    submittedAt: "09:40 AM",
+  },
+  {
+    id: "1046",
+    token: "A106",
+    name: "Patient 05",
+    age: 29,
+    gender: "Male",
+    complaint: "Abdominal Pain",
+    status: "waiting",
+    department: "General Medicine",
+    submittedAt: "09:48 AM",
+  },
+];
+
+// Detailed clinical record used on the Doctor Patient Review page.
+// Keyed by patient id from doctorQueue.
+export const patientRecords = {
+  "1042": {
+    chiefComplaint: "Chest discomfort for 2 days, associated with mild breathlessness on exertion.",
+    hpi:
+      "Patient reports intermittent central chest discomfort for 2 days, described as a dull pressure, non-radiating, lasting 5-10 minutes, occasionally triggered by walking. No associated sweating reported. Discomfort partially relieved by rest.",
+    pastMedicalHistory: ["Hypertension (8 years)", "Type 2 Diabetes Mellitus (5 years)"],
+    pastSurgicalHistory: ["Appendectomy (2003)"],
+    medications: [
+      { name: "Amlodipine", dose: "5 mg", frequency: "Once daily" },
+      { name: "Metformin", dose: "500 mg", frequency: "Twice daily" },
+    ],
+    allergies: ["No Known Drug Allergies"],
+    familyHistory: ["Father — Ischemic Heart Disease", "Mother — Type 2 Diabetes"],
+    personalHistory: ["Non-smoker", "Occasional alcohol use", "Sedentary lifestyle"],
+    reviewOfSystems: [
+      "Cardiovascular: chest discomfort as above, no palpitations reported",
+      "Respiratory: mild breathlessness on exertion",
+      "GI: no nausea or vomiting reported",
+      "Neuro: no dizziness or fainting reported",
+    ],
+    investigations: [
+      { test: "Hb", result: "11.2", reference: "12–16", abnormal: true },
+      { test: "Fasting Glucose", result: "142", reference: "70–140", abnormal: true },
+      { test: "Total Cholesterol", result: "198", reference: "<200", abnormal: false },
+    ],
+    timeline: [
+      { date: "12 Jan 2026", label: "Blood Test" },
+      { date: "25 Jan 2026", label: "Doctor Consultation" },
+      { date: "02 Feb 2026", label: "Prescription — Amlodipine started" },
+    ],
+    priorityAlert: true,
+    aiNotes:
+      "Patient-reported chest discomfort pattern flagged for priority review based on symptom combination. This is a triage flag only, not a diagnosis.",
+  },
+  "1043": {
+    chiefComplaint: "Fever for 3 days with body ache.",
+    hpi: "Patient reports intermittent fever up to 101°F for 3 days, associated with generalized body ache and mild headache. No cough or breathlessness reported.",
+    pastMedicalHistory: ["None reported"],
+    pastSurgicalHistory: ["None reported"],
+    medications: [{ name: "Paracetamol", dose: "650 mg", frequency: "As needed" }],
+    allergies: ["No Known Drug Allergies"],
+    familyHistory: ["Non-contributory"],
+    personalHistory: ["Non-smoker", "No alcohol use"],
+    reviewOfSystems: [
+      "General: fever, malaise",
+      "Respiratory: no cough reported",
+      "GI: appetite reduced, no vomiting",
+    ],
+    investigations: [
+      { test: "Hb", result: "12.8", reference: "12–16", abnormal: false },
+      { test: "WBC", result: "11,200", reference: "4,000–11,000", abnormal: true },
+    ],
+    timeline: [{ date: "24 Sep 2026", label: "Fever onset reported by patient" }],
+    priorityAlert: false,
+    aiNotes: "No red-flag symptoms reported during intake.",
+  },
+  "1044": {
+    chiefComplaint: "Bilateral knee joint pain, worse in the morning.",
+    hpi: "Patient reports chronic bilateral knee pain for over a year, with morning stiffness lasting about 20 minutes, aggravated by climbing stairs.",
+    pastMedicalHistory: ["Osteoarthritis (suspected, per patient)"],
+    pastSurgicalHistory: ["None reported"],
+    medications: [{ name: "Ibuprofen", dose: "400 mg", frequency: "As needed" }],
+    allergies: ["No Known Drug Allergies"],
+    familyHistory: ["Mother — Osteoarthritis"],
+    personalHistory: ["Retired", "Non-smoker"],
+    reviewOfSystems: ["Musculoskeletal: bilateral knee pain and stiffness", "No systemic symptoms reported"],
+    investigations: [],
+    timeline: [{ date: "18 Sep 2026", label: "Patient reports symptom onset over a year ago" }],
+    priorityAlert: false,
+    aiNotes: "Chronic musculoskeletal complaint pattern, no acute red flags reported.",
+  },
+};

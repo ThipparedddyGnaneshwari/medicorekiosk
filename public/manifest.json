@@ -1,0 +1,9 @@
+{
+  "short_name": "MediKiosk",
+  "name": "MediKiosk - Clinical History Kiosk",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#123F52",
+  "background_color": "#F5F9FA"
+}
